@@ -57,7 +57,6 @@ button {
 .nav-email-phone {
     display: flex;
     gap: 40px;
-    padding-top: 24px;
 }
 
 .page-header-container {
@@ -75,6 +74,8 @@ button {
     background-color: #ffffff;
     font-style: normal;
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .address-email-phone {
@@ -87,22 +88,25 @@ button {
     font-size: 56px;
     letter-spacing: 0.02em;
     line-height: 1.07;
-    padding: 188px 0;
-    margin-bottom: 48px;
-    margin-top: 188px;
     max-width: 496px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 48px;
 }
 
 .title-section {
-    background-color: #2e2f42;
-    letter-spacing: 0.02em;
-    font-size: 20px;
-    line-height: 1.2;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)),
+        url(../images/people-office.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     letter-spacing: 0.02em;
     padding-top: 188px;
     padding-bottom: 188px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .visually-hidden {
@@ -124,7 +128,6 @@ button {
     letter-spacing: 0.02em;
     line-height: 1.5;
     text-align: left;
-    margin-right: 8px;
 }
 
 .button-order-service {
@@ -148,10 +151,11 @@ button {
     border-radius: 4px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-order-service:hover,
-:focus {
+.button-order-service:focus {
     background-color: #404bbf;
 }
 
@@ -173,11 +177,9 @@ button {
     line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    padding: 24px 76px 24px 156px;
     justify-content: flex-start;
     margin-right: 76px;
     display: inline-block;
-    margin-bottom: 16px;
 }
 
 .nav-buttons {
@@ -185,12 +187,26 @@ button {
     font-weight: 500;
     text-decoration: none;
     letter-spacing: 0.02em;
-    margin-top: 24px;
-    gap: 40px;
-    margin-bottom: 24px;
     display: block;
     padding-top: 24px;
     padding-bottom: 24px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-buttons-current {
+    position: relative;
+    color: #404bbf;
+}
+
+.nav-buttons-current::after {
+    content: '';
+    border-radius: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    background-color: #404bbf;
+    position: absolute;
 }
 
 .nav-address {
@@ -203,6 +219,7 @@ button {
     gap: 40px;
     padding-top: 24px;
     padding-bottom: 24px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-email-phone {
@@ -232,8 +249,10 @@ button {
 
 .team-cards {
     background-color: #ffffff;
-    width: calc((100% -72px) / 4);
+    width: calc((100% - 72px) / 4);
     border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .team-cards-section {
@@ -277,20 +296,26 @@ button {
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    padding-top: 32px;
     margin-bottom: 8px;
-    margin-left: 65px;
-    margin-right: 65px;
     text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     text-align: center;
 }
 
 .team-card-positions {
     color: #434455;
-    margin-bottom: 32px;
-    margin-left: 68px;
-    margin-right: 68px;
+    margin-bottom: 8px;
     text-align: center;
+}
+
+.team-social-media {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+.team-list-media {
+    width: 40px;
+    height: 40px;
 }
 
 .portfolio-title {
@@ -312,7 +337,6 @@ button {
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    margin-top: 32px;
     margin-bottom: 8px;
 }
 
@@ -326,18 +350,14 @@ button {
 
 .footer {
     background-color: #2e2f42;
-    width: 1440px;
-    height: 312px;
     padding: 100px 0;
-    display: inline-block;
-    margin-bottom: 16px;
 }
 
 .footer-text {
     color: #f4f4fd;
     text-align: left;
     letter-spacing: 0.02em;
-    max-width: 264px;
+    width: 264px;
 }
 
 .footer-logo {
@@ -384,6 +404,8 @@ button {
 
 .portfolio {
     width: calc((100% - 48px) / 3);
+    cursor: pointer;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .name-portfolio {
@@ -394,4 +416,116 @@ button {
 
 .section-portfolio {
     padding: 120px 0;
+}
+
+.social-list-link {
+    fill: #f4f4fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #4d5ae5;
+    width: 100%;
+    height: 100%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+    background-color: #404bbf;
+}
+
+.footer-social-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+}
+
+.footer-social-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.social-footer-list {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-logo-container {
+    margin-right: 120px;
+}
+
+.footer .container {
+    display: flex;
+    align-items: baseline;
+}
+
+.social-link-footer {
+    fill: #f4f4fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #4d5ae5;
+    width: 100%;
+    height: 100%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link-footer:hover,
+.social-link-footer:focus {
+    background-color: #31d0aa;
+}
+
+.benefits-item-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    background-color: #f4f4fd;
+    margin-bottom: 8px;
+}
+
+.social-list-link-footer {
+    width: 40px;
+    height: 40px;
+}
+
+.overlay-cont {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio:hover .overlay {
+    transform: translateY(0%);
+}
+
+.portfolio:hover {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+        0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
