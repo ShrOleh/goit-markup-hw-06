@@ -186,6 +186,7 @@ section {
 .backdrop {
     position: fixed;
     opacity: 0;
+    background-color: rgba(46, 47, 66, 0.4);
     left: 0;
     top: 0;
     width: 100%;
