@@ -35,7 +35,7 @@ a:hover {
 }
 
 section {
-    padding: 120px 0;
+    padding: 96px 0;
 }
 
 .header-border {
@@ -43,10 +43,6 @@ section {
     box-shadow: 2px 1px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 1px 6px rgba(46, 47, 66, 0.08);
-}
-
-.header-border>.container {
-    display: flex;
 }
 
 .logo-header {
@@ -59,7 +55,6 @@ section {
     line-height: 1.17;
     letter-spacing: 0.54px;
     text-transform: uppercase;
-    margin-right: 76px;
     padding: 0;
 }
 
@@ -74,27 +69,7 @@ section {
 }
 
 .header-address {
-    font-style: normal;
-    display: flex;
-    padding: 24px 0;
-    margin-left: auto;
-}
-
-.contacts-list {
-    display: flex;
-    gap: 40px;
-}
-
-.header-contacts {
-    color: #434455;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: 0.32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: none;
 }
 
 .header-contacts:hover,
@@ -107,11 +82,11 @@ section {
     position: relative;
     color: #404bbf;
     font-size: 16px;
-    height: 52px;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.32px;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 24px 0;
 }
 
 .header-nav-inactive {
@@ -123,6 +98,7 @@ section {
     line-height: 1.5;
     letter-spacing: 0.32px;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 24px 0;
 }
 
 .header-nav-inactive:hover,
@@ -142,32 +118,145 @@ section {
     background-color: #404BBF;
 }
 
-.container-logo-nav-ul {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-right: auto;
-}
 
 .container-logo-nav {
     display: flex;
     justify-content: space-between;
-    padding: 24px 0 0 0;
+    align-items: center;
 }
 
+.mob-menu-ref {
+    display: flex;
+    padding: 16px 0;
+}
+
+.backdrop-mob {
+    position: fixed;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.backdrop-mob.is-open {
+    position: fixed;
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    background-color: rgba(46, 47, 66, 0.4);
+    width: 100%;
+    height: 100%;
+}
+
+.mobile-menu {
+    position: fixed;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: white;
+    padding: 72px 16px 40px;
+    top: 0;
+    left: calc(50% - 160px);
+    min-width: 320px;
+    width: 320px;
+    height: 100%;
+}
+
+.mob-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 168px;
+}
+
+.mob-close-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    cursor: pointer;
+}
+
+.mob-close-button:hover,
+.mob-close-button:focus,
+.mob-close-button:active {
+    background-color: #404BBF;
+}
+
+.mob-close-button:hover .close-butt-icon,
+.mob-close-button:focus .close-butt-icon,
+.mob-close-button:active .close-butt-icon {
+    fill: #FFFFFF;
+}
+
+.mob-menu-active {
+    display: flex;
+    color: #404BBF;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
+    letter-spacing: 0.32px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.mob-menu-inactive {
+    display: flex;
+    color: #2E2F42;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
+    letter-spacing: 0.32px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-header-contacts {
+    color: #434455;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.mob-icons-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
 
 .main-page-descr {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 48px;
     color: #FFF;
-    font-size: 56px;
+    font-size: 36px;
     font-style: normal;
     font-weight: 700;
     line-height: 1.07;
     letter-spacing: 1.12px;
     text-align: center;
-    padding-bottom: 48px;
-    max-width: 496px;
+    max-width: 216px;
 }
 
 .visually-hidden {
@@ -186,37 +275,34 @@ section {
 .backdrop {
     position: fixed;
     opacity: 0;
-    background-color: rgba(46, 47, 66, 0.4);
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
     background-color: rgba(46, 47, 66, 0.4);
+    opacity: 1;
     pointer-events: auto;
     visibility: visible;
+    width: 100%;
+    height: 100%;
 }
 
 .modal {
-    position: absolute;
+    position: fixed;
     background: #fcfcfc;
-    display: flex;
-    flex-direction: column;
     top: 50%;
     left: 50%;
-    width: 408px;
-    min-height: 584px;
+    width: calc(100% - 32px);
+    max-width: 408px;
+    height: auto;
+    max-height: 623px;
     margin: auto;
     border-radius: 4px;
-    padding: 72px 24px 24px 24px;
+    padding: 72px 15px 24px 16px;
     transform: translate(-50%, -50%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -328,7 +414,7 @@ section {
 
 .form-textarea {
     padding: 8px 16px;
-    width: 360px;
+    width: 100%;
     height: 120px;
     color: rgba(46, 47, 66, 0.4);
     font-size: 12px;
@@ -347,6 +433,8 @@ section {
 }
 
 .label-checkbox {
+    display: flex;
+    align-items: center;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
@@ -367,11 +455,11 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
+    min-width: 16px;
     height: 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
-    margin-right: 8px;
+    margin-right: 6px;
     fill: transparent;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -382,8 +470,15 @@ section {
     fill: #F4F4FD;
 }
 
+.policy2 {
+    display: inline;
+    width: auto;
+}
+
 .privacy-style {
     color: #4d5ae5;
+    display: inline-flex;
+    width: 81px;
 }
 
 .div-form-checkbox {
@@ -414,13 +509,18 @@ section {
 
 .effective-solution {
     background-color: #2E2F42;
-    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office1.jpg);
-    padding: 188px 0;
+    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/Dark-bg-mobile.jpg);
+    padding: 72px 0;
     margin: auto;
-    max-width: 1440px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+@media (min-resolution: 192dpi) {
+    .effective-solution {
+        background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/Dark-bg-mobile-2x.jpg);
+    }
 }
 
 .order-button {
@@ -453,21 +553,14 @@ section {
 .cont-benefits-list {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 72px;
 }
 
 .icon-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 112px;
-    margin-bottom: 8px;
-    left: 0;
-    top: 0;
-    box-sizing: border-box;
-    border: 1px solid rgb(142, 143, 153);
-    border-radius: 4px;
-    background-color: #f4f4fd;
+    position: absolute;
+    visibility: hidden;
 }
 
 .icon-social {
@@ -514,8 +607,9 @@ section {
 
 .benefits-headers {
     color: #2E2F42;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 36px;
+    text-align: center;
+    font-weight: 700;
     font-style: normal;
     line-height: 1.2;
     letter-spacing: 0.4px;
@@ -523,13 +617,15 @@ section {
 }
 
 .benefits-listitem {
-    width: calc((100% - 72px) / 4);
+    width: 100%;
+    max-width: 340px;
 }
 
 .benefits-paragraph {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.32px;
+    font-weight: 500;
 }
 
 .our-team-list {
@@ -547,7 +643,11 @@ section {
 .cont-team-list {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 24px;
+    row-gap: 72px;
+    max-width: 264px;
+
 }
 
 .team-persons {
@@ -571,10 +671,10 @@ section {
 
 .cont-portfolio-item {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 24px;
     row-gap: 48px;
-
 }
 
 .cont-portf-bord {
@@ -591,8 +691,6 @@ section {
     flex-direction: column;
     gap: 0;
     background: #fff;
-    width: 360px;
-    height: 300px;
     overflow: hidden;
 }
 
@@ -607,10 +705,37 @@ section {
     color: rgb(244, 244, 253);
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 2%;
     text-align: left;
     padding: 40px 32px;
     background: rgb(77, 90, 229);
+}
+
+.portfolio .container {
+    max-width: 320px;
+}
+
+#banking-pc {
+    display: none;
+}
+
+#payment-pc {
+    display: none;
+}
+
+#meditation-pc {
+    display: none;
+}
+
+#taxi-pc {
+    display: none;
+}
+
+#screen-pc {
+    display: none;
+}
+
+#online-pc {
+    display: none;
 }
 
 .portfolio-item {
@@ -658,15 +783,19 @@ img {
     display: flex;
     background: #2E2F42;
     padding: 100px 0;
+
 }
 
 .footer-style .container {
     display: flex;
-    align-items: baseline;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    max-width: 320px;
 }
 
 .footer-header {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     color: #4D5AE5;
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
@@ -676,11 +805,6 @@ img {
     letter-spacing: 0.54px;
     text-transform: uppercase;
     margin-bottom: 16px;
-
-}
-
-.footer-1st {
-    margin-right: 120px;
 }
 
 .footer-text {
@@ -688,8 +812,6 @@ img {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.32px;
-    max-width: 264px;
-
 }
 
 .footer-links-sign {
@@ -734,13 +856,21 @@ img {
     fill: #f4f4fd;
 }
 
+.footer-1st {
+    width: 100%;
+}
+
 .footer-2nd {
-    margin-right: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .footer-third {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .footer-links-sign-two {
@@ -754,22 +884,25 @@ img {
 
 .subscribe-form {
     display: flex;
-    gap: 24px;
-
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
 }
 
 .subscribe-label {
     display: flex;
+
 }
 
 .footer-input {
     border: 1px solid white;
+    opacity: 60%;
     background-color: transparent;
     font-size: 12px;
     line-height: 2;
     letter-spacing: 0.04em;
     border-radius: 4px;
-    width: 264px;
+    width: 288px;
     height: 40px;
     padding-left: 16px;
     color: white;
@@ -813,10 +946,24 @@ img {
     margin-left: 16px;
 }
 
-.container {
-    width: 1158px;
+.our-team .container {
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.container-logo-nav-ul {
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
 }
 
 .container-head {
@@ -824,4 +971,349 @@ img {
     justify-content: space-between;
     align-items: center;
     padding: 24px 0;
+}
+
+
+
+@media (min-width: 768px) {
+    .mob-menu-butt {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .benefits-headers {
+        text-align: left;
+    }
+
+    .modal {
+        width: 408px;
+        min-height: 584px;
+        padding: 72px 24px 24px 24px;
+    }
+
+    .form-textarea {
+        padding: 8px 16px;
+        width: 360px;
+        height: 120px;
+    }
+
+    .footer-header {
+        display: inline-block;
+    }
+
+    .container-logo-nav-ul {
+        visibility: visible;
+        position: static;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin-right: auto;
+        width: auto;
+        height: auto;
+    }
+
+    .container-logo-nav {}
+
+    .contacts-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .header-address {
+        font-style: normal;
+        display: flex;
+        align-items: center;
+        width: auto;
+    }
+
+    .header-contacts {
+        color: #434455;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .logo-header {
+        margin-right: 120px;
+    }
+
+    .header-border>.container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 768px;
+    }
+
+    .main-page-descr {
+        font-size: 56px;
+        max-width: 496px;
+
+    }
+
+    .effective-solution {
+        padding: 112px 0;
+        background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/Dark-bg-tablet.jpg);
+    }
+
+    .cont-benefits-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+        row-gap: 72px;
+    }
+
+    .benefits-listitem {
+        max-width: calc((100% - 24px) / 2);
+        width: 356px;
+
+    }
+
+    .our-team .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cont-team-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: calc((264px * 2) + 24px);
+    }
+
+    .portfolio .container {
+        max-width: 768px;
+    }
+
+    .portfolio-item {
+        width: calc((100% - 24px) / 2);
+    }
+
+    #banking-pc {
+        display: block;
+    }
+
+    #banking-mob {
+        display: none;
+    }
+
+    #payment-pc {
+        display: block;
+    }
+
+    #payment-mob {
+        display: none;
+    }
+
+    #meditation-pc {
+        display: block;
+    }
+
+    #meditation-mob {
+        display: none;
+    }
+
+    #taxi-pc {
+        display: block;
+    }
+
+    #taxi-mob {
+        display: none;
+    }
+
+    #screen-pc {
+        display: block;
+    }
+
+    #screen-mob {
+        display: none;
+    }
+
+    #online-pc {
+        display: block;
+    }
+
+    #online-mob {
+        display: none;
+    }
+
+    .footer-style {
+        justify-content: center;
+    }
+
+    .footer-style .container {
+        max-width: 584px;
+    }
+
+    .footer-1st {
+        margin-right: 24px;
+        width: auto;
+    }
+
+    .footer-text {
+        max-width: 264px;
+    }
+
+    .footer-third {
+        align-items: normal;
+        justify-content: center;
+    }
+
+    .subscribe-form {
+        gap: 24px;
+    }
+
+    .footer-2nd {
+        align-items: start;
+        width: auto;
+    }
+
+    .footer-input {
+        width: 264px;
+    }
+
+}
+
+
+@media (min-resolution: 192dpi) and (min-width: 768px) {
+    .effective-solution {
+        background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/Dark-bg-tablet-2x.jpg);
+    }
+}
+
+@media (min-width: 1158px) {
+    .container {
+        width: 1158px;
+        padding: 0 15px;
+    }
+
+    .header-contacts {
+        color: #434455;
+        font-size: 16px;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: 0.32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .header-border>.container {
+        max-width: 1158px;
+    }
+
+    .header-address {
+        height: auto;
+        align-items: center;
+    }
+
+    .logo-header {
+        margin-right: 76px;
+    }
+
+    .effective-solution {
+        max-width: 1440px;
+        padding: 188px 0;
+        background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office1.jpg)
+    }
+
+    .section {
+        padding: 120px 0;
+    }
+
+    .icon-center {
+        position: static;
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 112px;
+        margin-bottom: 8px;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        border: 1px solid rgb(142, 143, 153);
+        border-radius: 4px;
+        background-color: #f4f4fd;
+    }
+
+    .benefits-listitem {
+        width: calc((100% - 72px) / 4);
+    }
+
+    .benefits-headers {
+        color: #2E2F42;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 1.2;
+        letter-spacing: 0.4px;
+        margin-bottom: 8px;
+    }
+
+    .benefits-paragraph {
+        font-weight: 400;
+    }
+
+    .cont-benefits-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .cont-team-list {
+        flex-wrap: nowrap;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .portfolio .container {
+        max-width: 1158px;
+    }
+
+    .portfolio-item {
+        box-shadow: none;
+        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        width: calc((100% - 48px) / 3);
+    }
+
+    .footer-style .container {
+        max-width: 1158px;
+    }
+
+    .footer-1st {
+        margin-right: 120px;
+    }
+
+    .footer-2nd {
+        margin-right: 80px;
+    }
+
+    .footer-third {
+        width: auto;
+        justify-content: flex-start;
+    }
+
+    .footer-input {
+        opacity: 1;
+    }
+
+    .contacts-list {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    @media (min-resolution: 192dpi) and (min-width: 1158px) {
+        .effective-solution {
+            background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office1-2x.jpg);
+        }
+    }
+
 }
